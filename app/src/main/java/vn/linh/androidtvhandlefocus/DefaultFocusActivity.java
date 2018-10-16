@@ -1,13 +1,14 @@
 package vn.linh.androidtvhandlefocus;
 
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class DefaultFocusActivity extends AppCompatActivity {
+
     String TAG = getClass().getSimpleName();
     Button btn1;
     Button btn2;
@@ -26,12 +27,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "btn1 " + getActionName(event.getAction()));
                 if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP) {
                     Log.i(TAG, "btn1 key pad up");
-                    return true;
                 }
                 if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_DOWN) {
                     Log.i(TAG, "btn1 key pad down");
-                    btn2.requestFocus();
-                    return true;
                 }
                 return false;
             }
@@ -43,12 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "btn2 " + getActionName(event.getAction()));
                 if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_UP) {
                     Log.i(TAG, "btn2 key pad up");
-                    btn1.requestFocus();
-                    return true;
                 }
                 if (event.getKeyCode() == KeyEvent.KEYCODE_DPAD_DOWN) {
                     Log.i(TAG, "btn2 key pad down");
-                    return true;
                 }
                 return false;
             }
